@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Vintage_CloApp_Coursework</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="ayoshi">AYOSHI</string>
+    <string name="for_your_clothing_needs">for your clothing needs</string>
+    <string name="sign_in">sign-in</string>
+    <string name="register">register</string>
+    <string name="register_cap">Register</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="re_enter_password">Re-Enter Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="sign_in_register">Sign-In</string>
+</resources>
