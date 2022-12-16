@@ -1,4 +1,4 @@
-package com.example.vintage_cloapp_coursework.ui.home;
+package com.example.vintage_cloapp_coursework.ui.slideshow;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,19 +11,15 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.vintage_cloapp_coursework.R;
-import com.example.vintage_cloapp_coursework.databinding.FragmentHomeBinding;
 
-public class HomeFragment extends Fragment {
+public class FavoriteFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_home,container, false);
-
+        View root = inflater.inflate(R.layout.fragment_favorite,container, false);
 
         return root;
     }
-
 
 }

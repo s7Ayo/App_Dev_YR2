@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.vintage_cloapp_coursework.ui.gallery.GalleryFragment"
+        android:name="com.example.vintage_cloapp_coursework.ui.gallery.Basket"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/basket_fragment" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.vintage_cloapp_coursework.ui.slideshow.SlideshowFragment"
+        android:name="com.example.vintage_cloapp_coursework.ui.slideshow.FavoriteFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_favorite" />
 </navigation>
