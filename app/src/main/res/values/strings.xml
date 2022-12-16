@@ -25,4 +25,7 @@
     <string name="login">Login</string>
     <string name="basket">Basket</string>
     <string name="favorite">Favorite</string>
+    <string name="settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

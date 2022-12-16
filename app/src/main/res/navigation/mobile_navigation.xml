@@ -22,4 +22,9 @@
         android:name="com.example.vintage_cloapp_coursework.ui.slideshow.FavoriteFragment"
         android:label="@string/favorite"
         tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.vintage_cloapp_coursework.ui.gallery.Settings"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
