@@ -22,4 +22,5 @@
     <string name="re_enter_password">Re-Enter Password</string>
     <string name="phone_number">Phone Number</string>
     <string name="sign_in_register">Sign-In</string>
+    <string name="login">Login</string>
 </resources>

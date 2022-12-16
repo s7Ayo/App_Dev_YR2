@@ -171,6 +171,7 @@
         android:textColor="#C4A484"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:onClick="login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/button"
