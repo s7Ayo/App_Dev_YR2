@@ -7,24 +7,24 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.vintage_cloapp_coursework.ui.home.HomeFragment"
+        android:name="com.example.vintage_cloapp_coursework.activites.fragments.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_basket"
-        android:name="com.example.vintage_cloapp_coursework.ui.gallery.Basket"
+        android:name="com.example.vintage_cloapp_coursework.activites.fragments.Basket"
         android:label="@string/basket"
         tools:layout="@layout/basket_fragment" />
 
     <fragment
         android:id="@+id/nav_Favorite"
-        android:name="com.example.vintage_cloapp_coursework.ui.slideshow.FavoriteFragment"
+        android:name="com.example.vintage_cloapp_coursework.activites.fragments.FavoriteFragment"
         android:label="@string/favorite"
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.example.vintage_cloapp_coursework.ui.gallery.Settings"
+        android:name="com.example.vintage_cloapp_coursework.activites.fragments.Settings"
         android:label="@string/settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

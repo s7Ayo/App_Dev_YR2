@@ -1,4 +1,4 @@
-package com.example.vintage_cloapp_coursework.ui.slideshow;
+package com.example.vintage_cloapp_coursework.activites.fragments;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

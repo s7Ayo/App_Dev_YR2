@@ -1,4 +1,4 @@
-package com.example.vintage_cloapp_coursework;
+package com.example.vintage_cloapp_coursework.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.example.vintage_cloapp_coursework.R;
 
 public class WelcomeActivity2 extends AppCompatActivity {
 
@@ -19,11 +21,11 @@ public class WelcomeActivity2 extends AppCompatActivity {
     }
 
     public void register(View view) {
-        startActivity(new Intent(WelcomeActivity2.this,RegistrationActivity2.class));
+        startActivity(new Intent(WelcomeActivity2.this, RegistrationActivity2.class));
     }
 
     public void login(View view) {
-        startActivity(new Intent(WelcomeActivity2.this,LoginActivity2.class));
+        startActivity(new Intent(WelcomeActivity2.this, LoginActivity2.class));
 
     }
 }

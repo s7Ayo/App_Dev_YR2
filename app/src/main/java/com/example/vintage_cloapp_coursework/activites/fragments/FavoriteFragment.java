@@ -1,4 +1,4 @@
-package com.example.vintage_cloapp_coursework.ui.slideshow;
+package com.example.vintage_cloapp_coursework.activites.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
