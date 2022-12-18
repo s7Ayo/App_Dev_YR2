@@ -18,7 +18,7 @@
             android:id="@+id/hor_img"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/icons_jean"
+            android:src="@drawable/pants_icons"
             android:layout_gravity="center"/>
 
         <TextView
