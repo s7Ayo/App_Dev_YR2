@@ -13,19 +13,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.vintage_cloapp_coursework.R;
 import com.example.vintage_cloapp_coursework.adapters.HomeHorAdapter;
 import com.example.vintage_cloapp_coursework.adapters.HomeVerAdapter;
+import com.example.vintage_cloapp_coursework.adapters.UpdateVerticalRec;
 import com.example.vintage_cloapp_coursework.models.HomeHorModel;
 import com.example.vintage_cloapp_coursework.models.HomeVerModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
         RecyclerView homeHorizontalRec,homeVerticalRec;
-        List<HomeHorModel> homeHorModelList;
+        ArrayList<HomeHorModel> homeHorModelList;
         HomeHorAdapter homeHorAdapter;
         ////////////////////////////////VerticalRec
-        List<HomeVerModel> homeVerModelList;
+        ArrayList<HomeVerModel> homeVerModelList;
         HomeVerAdapter homeVerAdapter;
 
 
@@ -52,7 +53,7 @@ public class HomeFragment extends Fragment {
         homeHorModelList.add(new  HomeHorModel(R.drawable.shoes_icon,"Shoes"));
         homeHorModelList.add(new  HomeHorModel(R.drawable.bags_icons,"Bags"));
 
-        homeHorAdapter = new HomeHorAdapter(getActivity(),homeHorModelList);
+        homeHorAdapter = new HomeHorAdapter();
         homeHorizontalRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
         homeHorizontalRec.setAdapter(homeHorAdapter);
         homeHorizontalRec.setHasFixedSize(true);
@@ -89,4 +90,8 @@ public class HomeFragment extends Fragment {
     }
 
 
+    @Override
+    public void callBack(int position, ArrayList<HomeVerModel> list) {
+
+    }
 }
