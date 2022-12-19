@@ -4,30 +4,30 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vintage_cloapp_coursework.R;
 import com.example.vintage_cloapp_coursework.adapters.HomeHorAdapter;
-import com.example.vintage_cloapp_coursework.databinding.FragmentHomeBinding;
+import com.example.vintage_cloapp_coursework.adapters.HomeVerAdapter;
 import com.example.vintage_cloapp_coursework.models.HomeHorModel;
+import com.example.vintage_cloapp_coursework.models.HomeVerModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-        RecyclerView homeHorizontalRec;
+        RecyclerView homeHorizontalRec,homeVerticalRec;
         List<HomeHorModel> homeHorModelList;
         HomeHorAdapter homeHorAdapter;
+        ////////////////////////////////VerticalRec
+        List<HomeVerModel> homeVerModelList;
+        HomeVerAdapter homeVerAdapter;
 
-
-    private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -35,8 +35,12 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home,container, false);
 
         homeHorizontalRec = root.findViewById(R.id.home_hor_rec);
-        homeHorizontalRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
 
+
+        homeVerticalRec = root.findViewById(R.id.home_ver_rec);
+
+
+        ////////////////////////////////HorozontalRecylerview
 
         homeHorModelList = new ArrayList<>();
 
@@ -49,9 +53,38 @@ public class HomeFragment extends Fragment {
         homeHorModelList.add(new  HomeHorModel(R.drawable.bags_icons,"Bags"));
 
         homeHorAdapter = new HomeHorAdapter(getActivity(),homeHorModelList);
+        homeHorizontalRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
         homeHorizontalRec.setAdapter(homeHorAdapter);
         homeHorizontalRec.setHasFixedSize(true);
         homeHorizontalRec.setNestedScrollingEnabled(false);
+
+
+
+        ////////////////////////////////VerticalRecylerview
+
+        homeVerModelList = new ArrayList<>();
+
+        homeVerModelList.add(new HomeVerModel(R.drawable.palm_angel_monclizzy,"Palm Angel Monclizzy","4.8", "$5000"));
+        homeVerModelList.add(new HomeVerModel(R.drawable.stussy_jacket,"Stussy 8 Ball Jacket ","4.4", "$275"));
+        homeVerModelList.add(new HomeVerModel(R.drawable.f1_jacket,"Nascar Formula 1  Jacket ","3.9", "$75"));
+
+        homeVerAdapter = new HomeVerAdapter(getActivity(),homeVerModelList);
+        homeVerticalRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
+        homeVerticalRec.setAdapter(homeVerAdapter);
+        homeVerticalRec.setHasFixedSize(true);
+        homeVerticalRec.setNestedScrollingEnabled(false);
+
+
+
+
+
+
+
+
+
+
+
+
         return root;
     }
 

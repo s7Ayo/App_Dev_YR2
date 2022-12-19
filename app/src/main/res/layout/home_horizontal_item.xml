@@ -28,7 +28,8 @@
             android:textAlignment="center"
             android:layout_marginTop="10dp"
             android:text="Pants"
-            android:textColor="@color/white"
+            android:padding="10dp"
+            android:textColor="@color/medGray"
             android:textSize="15sp"
             android:fontFamily="monospace"
 
