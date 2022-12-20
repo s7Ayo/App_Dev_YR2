@@ -1,5 +1,6 @@
 package com.example.vintage_cloapp_coursework.adapters;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -25,6 +26,7 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
     UpdateVerticalRec updateVerticalRec;
     Activity activity;
     ArrayList<HomeHorModel> list;
+    Context context;
 
     boolean check = true;
     boolean select = true;
@@ -52,7 +54,7 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.imageView.setImageResource(list.get(position).getImage());
         holder.name.setText(list.get(position).getName());
 

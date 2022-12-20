@@ -53,7 +53,7 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
         homeHorModelList.add(new  HomeHorModel(R.drawable.shoes_icon,"Shoes"));
         homeHorModelList.add(new  HomeHorModel(R.drawable.bags_icons,"Bags"));
 
-        homeHorAdapter = new HomeHorAdapter();
+        homeHorAdapter = new HomeHorAdapter(this,getActivity(),homeHorModelList);
         homeHorizontalRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
         homeHorizontalRec.setAdapter(homeHorAdapter);
         homeHorizontalRec.setHasFixedSize(true);
@@ -65,24 +65,11 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
         homeVerModelList = new ArrayList<>();
 
-        homeVerModelList.add(new HomeVerModel(R.drawable.palm_angel_monclizzy,"Palm Angel Monclizzy","4.8", "$5000"));
-        homeVerModelList.add(new HomeVerModel(R.drawable.stussy_jacket,"Stussy 8 Ball Jacket ","4.4", "$275"));
-        homeVerModelList.add(new HomeVerModel(R.drawable.f1_jacket,"Nascar Formula 1  Jacket ","3.9", "$75"));
+
 
         homeVerAdapter = new HomeVerAdapter(getActivity(),homeVerModelList);
-        homeVerticalRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
         homeVerticalRec.setAdapter(homeVerAdapter);
-        homeVerticalRec.setHasFixedSize(true);
-        homeVerticalRec.setNestedScrollingEnabled(false);
-
-
-
-
-
-
-
-
-
+        homeVerticalRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
 
 
 
@@ -92,6 +79,10 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
     @Override
     public void callBack(int position, ArrayList<HomeVerModel> list) {
+
+        homeVerAdapter = new HomeVerAdapter(getContext(),list);
+        homeVerAdapter.notifyDataSetChanged();
+        homeVerticalRec.setAdapter(homeVerAdapter);
 
     }
 }
