@@ -78,7 +78,6 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
                         homeVerModels.add(new HomeVerModel(R.drawable.stussy_jacket,"Stussy 8 Ball Jacket ","4.4", "$275"));
                         homeVerModels.add(new HomeVerModel(R.drawable.f1_jacket,"Nascar Formula 1  Jacket ","3.9", "$75"));
                         homeVerModels.add(new HomeVerModel(R.drawable.palm_angel_monclizzy,"Palm Angel Monclizzy","4.8", "$5000"));
-                        homeVerModels.add(new HomeVerModel(R.drawable.band_tshirt,"Band Tshirt ","3.9", "$15"));
 
 
                         updateVerticalRec.callBack(adapterPosition,homeVerModels);
