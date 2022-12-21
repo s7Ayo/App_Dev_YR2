@@ -18,12 +18,13 @@ import com.example.vintage_cloapp_coursework.models.HomeHorModel;
 import com.example.vintage_cloapp_coursework.models.HomeVerModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
         RecyclerView homeHorizontalRec,homeVerticalRec;
         ArrayList<HomeHorModel> homeHorModelList;
+
+
         HomeHorAdapter homeHorAdapter;
         ////////////////////////////////VerticalRec
         ArrayList<HomeVerModel> homeVerModelList;
@@ -63,7 +64,8 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
         ////////////////////////////////VerticalRecylerview
 
-        homeVerModelList = new ArrayList<>();
+
+
 
 
 

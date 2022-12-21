@@ -38,10 +38,7 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
         this.list = list;
     }
 
-    public HomeHorAdapter(Context context, ArrayList<HomeHorModel> list) {
-        this.context = context;
-        this.list = list;
-    }
+
 
     @NonNull
     @Override
@@ -54,111 +51,111 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        holder.imageView.setImageResource(list.get(position).getImage());
-        holder.name.setText(list.get(position).getName());
-
-        if (check){
-            ArrayList<HomeVerModel>homeVerModels = new ArrayList<>();
-            homeVerModels.add(new HomeVerModel(R.drawable.palm_angel_monclizzy,"Palm Angel Monclizzy","4.8", "$5000"));
-            homeVerModels.add(new HomeVerModel(R.drawable.stussy_jacket,"Stussy 8 Ball Jacket ","4.4", "$275"));
-            homeVerModels.add(new HomeVerModel(R.drawable.f1_jacket,"Nascar Formula 1  Jacket ","3.9", "$75"));
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        int adapterPosition = holder.getAdapterPosition();
+        holder.imageView.setImageResource(list.get(adapterPosition).getImage());
+        holder.name.setText(list.get(adapterPosition).getName());
 
 
-            updateVerticalRec.callBack(position,homeVerModels);
+
+        if (check) {
+            ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
+            homeVerModels.add(new HomeVerModel(R.drawable.stussy_jacket, "Stussy 8 Ball Jacket ", "4.4", "$275"));
+            homeVerModels.add(new HomeVerModel(R.drawable.f1_jacket, "Nascar Formula 1  Jacket ", "3.9", "$75"));
+            homeVerModels.add(new HomeVerModel(R.drawable.palm_angel_monclizzy, "Palm Angel Monclizzy", "4.8", "$5000"));
+
+            updateVerticalRec.callBack(adapterPosition, homeVerModels);
             check = false;
+        }
             holder.cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    row_index = position;
+                public void onClick(View v) {
+                    row_index = adapterPosition;
                     notifyDataSetChanged();
 
-                    if(position == 0){//Jacket
-                        ArrayList<HomeVerModel>homeVerModels = new ArrayList<>();
-
-                        homeVerModels.add(new HomeVerModel(R.drawable.palm_angel_monclizzy,"Palm Angel Monclizzy","4.8", "$5000"));
+                    if(adapterPosition == 0){
+                        ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
                         homeVerModels.add(new HomeVerModel(R.drawable.stussy_jacket,"Stussy 8 Ball Jacket ","4.4", "$275"));
                         homeVerModels.add(new HomeVerModel(R.drawable.f1_jacket,"Nascar Formula 1  Jacket ","3.9", "$75"));
+                        homeVerModels.add(new HomeVerModel(R.drawable.palm_angel_monclizzy,"Palm Angel Monclizzy","4.8", "$5000"));
+                        homeVerModels.add(new HomeVerModel(R.drawable.band_tshirt,"Band Tshirt ","3.9", "$15"));
 
-                        updateVerticalRec.callBack(position,homeVerModels);
+
+                        updateVerticalRec.callBack(adapterPosition,homeVerModels);
                     }
-                    else if (position ==1 ){//Tshirt
-                        ArrayList<HomeVerModel>homeVerModels = new ArrayList<>();
+                    else if(adapterPosition == 1){
+                        ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
 
                         homeVerModels.add(new HomeVerModel(R.drawable.slick_angel_tshirt," Slick Angel Tshirt","3.2", "$19"));
                         homeVerModels.add(new HomeVerModel(R.drawable.anime_girl_tshirt,"Anime Girl Tshirt ","4.4", "$27"));
                         homeVerModels.add(new HomeVerModel(R.drawable.band_tshirt,"Band Tshirt ","3.9", "$15"));
 
-                        updateVerticalRec.callBack(position,homeVerModels);
-
+                        updateVerticalRec.callBack(adapterPosition,homeVerModels);
                     }
-                    else if (position ==2 ){//Shorts
-                        ArrayList<HomeVerModel>homeVerModels = new ArrayList<>();
+                    else if(adapterPosition == 2){
+                        ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
 
                         homeVerModels.add(new HomeVerModel(R.drawable.star_shorts,"Star Shorts","4.8", "$50"));
-
-                        updateVerticalRec.callBack(position,homeVerModels);
+                        updateVerticalRec.callBack(adapterPosition,homeVerModels);
 
                     }
-                    else if (position ==3 ){//Pants
-                        ArrayList<HomeVerModel>homeVerModels = new ArrayList<>();
+                    else if(adapterPosition == 3){
+                        ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
 
                         homeVerModels.add(new HomeVerModel(R.drawable.green_cargo_pants,"Green Cargo Pants","4.8", "$32"));
                         homeVerModels.add(new HomeVerModel(R.drawable.camo_cargo_pants,"Surplus Infantry Cargo Pants ","4.4", "$75"));
 
-
-                        updateVerticalRec.callBack(position,homeVerModels);
+                        updateVerticalRec.callBack(adapterPosition,homeVerModels);
 
                     }
-                    else if (position ==4 ){//Hats
-                        ArrayList<HomeVerModel>homeVerModels = new ArrayList<>();
+                    else if(adapterPosition == 4){
+                        ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
 
                         homeVerModels.add(new HomeVerModel(R.drawable.black_trucker_hat,"Black Trucker Hat","4.8", "$21"));
 
-
-                        updateVerticalRec.callBack(position,homeVerModels);
+                        updateVerticalRec.callBack(adapterPosition,homeVerModels);
 
                     }
-                    else if (position ==5 ){//Shoes
-                        ArrayList<HomeVerModel>homeVerModels = new ArrayList<>();
+                    else if(adapterPosition == 5){
+                        ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
 
                         homeVerModels.add(new HomeVerModel(R.drawable.nb_350s_green,"Green NB 550s","4.8", "$120"));
                         homeVerModels.add(new HomeVerModel(R.drawable.blue_lv_shoes,"Louis Vuitton (Bleu Ciel)","3.9", "$1500"));
 
-                        updateVerticalRec.callBack(position,homeVerModels);
+                        updateVerticalRec.callBack(adapterPosition,homeVerModels);
 
                     }
-                    else if (position ==6 ){//Bags
-                        ArrayList<HomeVerModel>homeVerModels = new ArrayList<>();
+                    else if(adapterPosition == 6){
+                        ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
 
                         homeVerModels.add(new HomeVerModel(R.drawable.brown_nike_sling_bag,"Brown Nike Sling Bag","4.8", "$5000"));
 
-                        updateVerticalRec.callBack(position,homeVerModels);
-
+                        updateVerticalRec.callBack(adapterPosition,homeVerModels);
                     }
                 }
             });
-                if(select){
-                        if(position == 0){
-                            holder. cardView.setBackgroundResource(R.drawable.change_bg);
-                        }
-                }
-                else{
-                    if(row_index == position){
-                        holder. cardView.setBackgroundResource(R.drawable.change_bg);
-                    }else{
-                        holder. cardView.setBackgroundResource(R.drawable.defualt_bg);
-                    }
+            if (select){
+                if (adapterPosition == 0 ){
+                    holder.cardView.setBackgroundResource(R.drawable.change_bg);
+                    select =false;
                 }
 
+            }else {
+                if (row_index == adapterPosition){
+                    holder.cardView.setBackgroundResource(R.drawable.change_bg);
+                }else {
+                    holder.cardView.setBackgroundResource(R.drawable.defualt_bg);
 
+                }
+
+            }
         }
-    }
+
+
+
 
     @Override
-    public int getItemCount() {
-        return list.size();
-    }
+    public int getItemCount() { return list.size(); }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
