@@ -90,7 +90,7 @@
                     android:maxLines="2"
                     android:padding="2dp"
                     android:singleLine="true"
-                    android:text="180"
+                    android:text="@string/Money_ammount"
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold"

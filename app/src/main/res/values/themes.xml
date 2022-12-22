@@ -22,4 +22,14 @@
     <style name="Theme.Vintage_CloApp_Coursework.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Vintage_CloApp_Coursework.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    
+    <style name="BottomSheetTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetTheme</item>
+    </style>
+    <style name="bottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="background">
+
+        </item>
+
+    </style>
 </resources>
