@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/email_address_input_loginpage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -60,7 +60,7 @@
 
     <EditText
         android:textColor="@color/white"
-        android:id="@+id/editText2"
+        android:id="@+id/password_input_loginpage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#CCCCCC"
@@ -71,7 +71,7 @@
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/email_address_input_loginpage"
         app:layout_constraintWidth_percent=".8" />
 
     <Button
@@ -87,7 +87,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/email_address_input_loginpage"
         app:layout_constraintVertical_bias="0.6"
         app:layout_constraintWidth_percent=".8" />
     <TextView

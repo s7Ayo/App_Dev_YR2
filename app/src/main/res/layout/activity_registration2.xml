@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/firstname_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -61,7 +61,7 @@
 
     <EditText
         android:textColor="@color/white"
-        android:id="@+id/editText2"
+        android:id="@+id/lastame_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#CCCCCC"
@@ -71,12 +71,12 @@
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/firstname_input"
         app:layout_constraintWidth_percent=".8" />
 
     <EditText
         android:textColor="@color/white"
-        android:id="@+id/editText3"
+        android:id="@+id/email_address_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#CCCCCC"
@@ -86,12 +86,12 @@
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/lastame_input"
         app:layout_constraintWidth_percent=".8" />
 
     <EditText
         android:textColor="@color/white"
-        android:id="@+id/editText4"
+        android:id="@+id/password_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#CCCCCC"
@@ -101,12 +101,12 @@
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/email_address_input"
         app:layout_constraintWidth_percent=".8" />
 
     <EditText
         android:textColor="@color/white"
-        android:id="@+id/editText6"
+        android:id="@+id/re_password_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#CCCCCC"
@@ -116,12 +116,12 @@
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4"
+        app:layout_constraintTop_toBottomOf="@+id/password_input"
         app:layout_constraintWidth_percent=".8" />
 
     <EditText
         android:textColor="@color/white"
-        android:id="@+id/editText7"
+        android:id="@+id/phone_number_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#CCCCCC"
@@ -131,12 +131,12 @@
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6"
+        app:layout_constraintTop_toBottomOf="@+id/re_password_input"
         app:layout_constraintWidth_percent=".8" />
 
     <Button
         android:onClick="mainActivity"
-        android:id="@+id/button"
+        android:id="@+id/regist_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bg_design"
@@ -147,8 +147,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4"
-        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number_input"
+        android:paddingBottom="10dp"
         app:layout_constraintWidth_percent=".8" />
 
     <TextView
@@ -161,7 +161,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/regist_button"
         app:layout_constraintHorizontal_bias="0.4"/>
 
     <TextView
@@ -175,7 +175,7 @@
         android:onClick="login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/regist_button"
         app:layout_constraintHorizontal_bias="0"/>
 
 
