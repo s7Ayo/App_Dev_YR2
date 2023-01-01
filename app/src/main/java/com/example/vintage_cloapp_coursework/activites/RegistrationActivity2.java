@@ -41,6 +41,9 @@ public class RegistrationActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validateEmailAddress(emailinput);
+                validateFName(fnameinput);
+                validateLName(lnameinput);
+                validatePhnum(phonenumberinput);
 
             }
         }));
@@ -51,7 +54,7 @@ public class RegistrationActivity2 extends AppCompatActivity {
     private  boolean validateEmailAddress( EditText emailinput){
         String email =  emailinput.getText().toString();
         if(!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            Toast.makeText(this,"valid email address",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,"valid email address",Toast.LENGTH_SHORT).show();
             return true;
         }else{
             Toast.makeText(this,"invalid email address",Toast.LENGTH_SHORT).show();
@@ -60,9 +63,56 @@ public class RegistrationActivity2 extends AppCompatActivity {
 
     }
 
+    private boolean validateFName(EditText fnameinput){
+        String Fname = fnameinput.getText().toString();
+        if(Fname.isEmpty()){
+            Toast.makeText(this, "Please Enter a Valid First Name",Toast.LENGTH_SHORT).show();
+            return false;
+        }else{
+            return true;
+        }
+
+    }
+
+    private boolean validateLName(EditText lnameinput){
+        String Lname = lnameinput.getText().toString();
+        if(Lname.isEmpty()){
+            Toast.makeText(this, "Please Enter a Valid Last Name",Toast.LENGTH_SHORT).show();
+            return false;
+        }else{
+            return true;
+        }
+
+    }
+
+    private  boolean validatePassword(EditText passwordinput, EditText repasswordinput ){
+        String Password = passwordinput.getText().toString();
+        String RePassword = repasswordinput.getText().toString();
+        if (){
+
+        }
+
+    }
+
+    private boolean validatePhnum(EditText phonenumberinput ){
+        String PhoneNUM = phonenumberinput.getText().toString();
+        if (!PhoneNUM.isEmpty() && PhoneNUM.matches("^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$")){
+            return true;
+        }else{
+            Toast.makeText(this, "Please Enter a Valid PhoneNumber",Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+    }
+
+
+
     public void login(View view) {
         startActivity(new Intent(RegistrationActivity2.this, LoginActivity2.class));
     }
+
+
+
 
 /*    public void mainActivity(View view) {
         startActivity(new Intent(RegistrationActivity2.this, MainActivity.class));
