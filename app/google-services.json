@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "28805713396",
+    "project_id": "vintage-clo-app",
+    "storage_bucket": "vintage-clo-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28805713396:android:f1db4890b76cbf4171bda1",
+        "android_client_info": {
+          "package_name": "com.example.vintage_cloapp_coursework"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28805713396-lvpr95uhk49dlnsp8jjkbo83o83167tj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vintage_cloapp_coursework",
+            "certificate_hash": "ee8f17f969b08d73585354e05f9776f581a89d98"
+          }
+        },
+        {
+          "client_id": "28805713396-9l3p98vln57bsa6jchd1l2uu93dki4sf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFeX4-b-uuJ2TH3BuPXlf2xBr4Tl2nBDI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28805713396-9l3p98vln57bsa6jchd1l2uu93dki4sf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

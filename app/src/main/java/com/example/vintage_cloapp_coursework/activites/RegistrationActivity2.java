@@ -44,6 +44,7 @@ public class RegistrationActivity2 extends AppCompatActivity {
                 validateFName(fnameinput);
                 validateLName(lnameinput);
                 validatePhnum(phonenumberinput);
+                validatePassword(passwordinput,repasswordinput);
 
             }
         }));
@@ -86,11 +87,25 @@ public class RegistrationActivity2 extends AppCompatActivity {
     }
 
     private  boolean validatePassword(EditText passwordinput, EditText repasswordinput ){
-        String Password = passwordinput.getText().toString();
-        String RePassword = repasswordinput.getText().toString();
-        if (){
+        String password = passwordinput.getText().toString();
+        String repassword = repasswordinput.getText().toString();
+        if (!password.isEmpty() && !repassword.isEmpty() && password.equals(repassword)){
+            return true;
+        }else if(password.isEmpty()){
 
+            Toast.makeText(this, "Please Enter a Password",Toast.LENGTH_SHORT).show();
+            return false;
+
+        }else if(repassword.isEmpty()) {
+
+            Toast.makeText(this, "Please Enter a RePassword", Toast.LENGTH_SHORT).show();
+            return false;
+
+        }else{
+            Toast.makeText(this, "Make your Password and Repassword the same",Toast.LENGTH_SHORT).show();
+            return false;
         }
+
 
     }
 
