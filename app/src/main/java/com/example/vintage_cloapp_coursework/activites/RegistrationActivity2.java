@@ -10,7 +10,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.vintage_cloapp_coursework.MainActivity;
 import com.example.vintage_cloapp_coursework.R;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class RegistrationActivity2 extends AppCompatActivity {
@@ -22,6 +27,8 @@ public class RegistrationActivity2 extends AppCompatActivity {
     private EditText repasswordinput;
     private EditText phonenumberinput;
     Button registerbutton;
+
+     FirebaseFirestore firestore;
 
 
     @Override
@@ -37,20 +44,33 @@ public class RegistrationActivity2 extends AppCompatActivity {
         phonenumberinput = findViewById(R.id.phone_number_input);
         registerbutton = findViewById(R.id.regist_button);
 
+        Map<String,Object> users = new HashMap<>();
+        users.put("fname", null);
+        users.put("lname", null);
+        users.put("email", null);
+        users.put("password",null);
+        users.put("phonenumber",null);
+
         registerbutton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validateEmailAddress(emailinput);
-                validateFName(fnameinput);
-                validateLName(lnameinput);
-                validatePhnum(phonenumberinput);
-                validatePassword(passwordinput,repasswordinput);
+        /*validateEmailAddress(emailinput);
+        validateFName(fnameinput);
+        validateLName(lnameinput);
+        validatePhnum(phonenumberinput);
+        validatePassword(passwordinput,repasswordinput);*/
+                if (!validateEmailAddress(emailinput) || !validateFName(fnameinput) || !validateLName(lnameinput) || !validatePhnum(phonenumberinput) || !validatePassword(passwordinput, repasswordinput)) {
+                    // Use the view's context for the Toast
+                    Toast.makeText(view.getContext(), "You have been registered", Toast.LENGTH_SHORT).show();
 
+                    return;
+                }
             }
         }));
 
 
     }
+
 
     private  boolean validateEmailAddress( EditText emailinput){
         String email =  emailinput.getText().toString();
@@ -129,8 +149,9 @@ public class RegistrationActivity2 extends AppCompatActivity {
 
 
 
-/*    public void mainActivity(View view) {
+    public void mainActivity(View view) {
         startActivity(new Intent(RegistrationActivity2.this, MainActivity.class));
 
-    }*/
+    }
+
 }
