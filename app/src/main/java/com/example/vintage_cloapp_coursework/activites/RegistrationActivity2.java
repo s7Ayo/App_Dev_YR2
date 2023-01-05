@@ -12,8 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.vintage_cloapp_coursework.MainActivity;
 import com.example.vintage_cloapp_coursework.R;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.security.MessageDigest;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,13 +31,15 @@ public class RegistrationActivity2 extends AppCompatActivity {
     private EditText phonenumberinput;
     Button registerbutton;
 
-     FirebaseFirestore firestore;
 
-
+    private  FirebaseDatabase db = FirebaseDatabase.getInstance();
+    private DatabaseReference root = db.getReference();
+// ...
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration2);
+
 
         fnameinput = findViewById(R.id.firstname_input);
         lnameinput = findViewById(R.id.lastame_input);
@@ -45,24 +50,48 @@ public class RegistrationActivity2 extends AppCompatActivity {
         registerbutton = findViewById(R.id.regist_button);
 
         Map<String,Object> users = new HashMap<>();
-        users.put("fname", null);
-        users.put("lname", null);
-        users.put("email", null);
-        users.put("password",null);
-        users.put("phonenumber",null);
+        /*
+        users.put("fname",fnameinput);
+        users.put("lname", lnameinput);
+        users.put("email", emailinput);
+        users.put("password",passwordinput);
+        users.put("phonenumber",phonenumberinput);
+        */
 
         registerbutton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-        /*validateEmailAddress(emailinput);
-        validateFName(fnameinput);
-        validateLName(lnameinput);
-        validatePhnum(phonenumberinput);
-        validatePassword(passwordinput,repasswordinput);*/
-                if (!validateEmailAddress(emailinput) || !validateFName(fnameinput) || !validateLName(lnameinput) || !validatePhnum(phonenumberinput) || !validatePassword(passwordinput, repasswordinput)) {
-                    // Use the view's context for the Toast
-                    Toast.makeText(view.getContext(), "You have been registered", Toast.LENGTH_SHORT).show();
 
+                if (validateEmailAddress(emailinput) && validateFName(fnameinput) && validateLName(lnameinput) && validatePhnum(phonenumberinput) && validatePassword(passwordinput, repasswordinput)) {
+                    // Use the view's context for the Toast
+                    String fname =  fnameinput.getText().toString();
+                    String lname =  lnameinput.getText().toString();
+                    String email = emailinput.getText().toString();
+                    String password  = passwordinput.getText().toString();
+                    try {
+                        MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+                        password = Base64.getEncoder().encodeToString(messageDigest.digest(password.getBytes("UTF-8")));
+                    } catch (Exception e) {
+                        // handle the exception
+                        return;
+                    }
+                    String phonenumber = phonenumberinput.getText().toString();
+
+                    users.put("fname",fname);
+                    users.put("lname", lname);
+                    users.put("email", email);
+                    users.put("password", password);
+                    users.put("phonenumber", phonenumber);
+
+                    root.child("users").child(phonenumber).updateChildren(users);
+                    //FirebaseDatabase.getInstance().setLogLevel(Logger.Level.DEBUG);
+                    Toast.makeText(view.getContext(), "You have been registered", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RegistrationActivity2.this, LoginActivity2.class));
+
+
+
+                    return;
+                }else{
                     return;
                 }
             }
