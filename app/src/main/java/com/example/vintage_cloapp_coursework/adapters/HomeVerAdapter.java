@@ -12,11 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vintage_cloapp_coursework.R;
-import com.example.vintage_cloapp_coursework.models.HomeVerModel;
+import com.example.vintage_cloapp_coursework.models.CartModel;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHolder>{
@@ -24,9 +23,9 @@ public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHold
 
     private BottomSheetDialog bottomSheetDialog;
     Context context;
-    ArrayList<HomeVerModel> list;
+    ArrayList<CartModel> list;
 
-    public HomeVerAdapter(Context context, ArrayList<HomeVerModel> list) {
+    public HomeVerAdapter(Context context, ArrayList<CartModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -57,7 +56,9 @@ public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHold
                 sheetView.findViewById(R.id.add_to_cart).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
                         Toast.makeText(context,"Added To Cart",Toast.LENGTH_SHORT).show();
+                        list.add(new CartModel(mImage,mName,mPrice, mRating));
                         bottomSheetDialog.dismiss();
 
                     }

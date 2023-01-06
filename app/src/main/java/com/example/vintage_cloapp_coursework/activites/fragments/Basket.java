@@ -36,8 +36,8 @@ public class Basket extends Fragment {
         recyclerView = view.findViewById(R.id.cart_rec);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         list = new ArrayList<>();
-        list.add(new CartModel(R.drawable.palm_angel_monclizzy, "Palm Angel Monclizzy","$5000","4.9"));
-        list.add(new CartModel(R.drawable.anime_girl_tshirt,"Anime Girl Tshirt ","$27", "4.4"));
+        //list.add(new CartModel(R.drawable.palm_angel_monclizzy, "Palm Angel Monclizzy","$5000","4.9"));
+        //list.add(new CartModel(R.drawable.anime_girl_tshirt,"Anime Girl Tshirt ","$27", "4.4"));
 
         cartAdapter = new CartAdapter(list);
         recyclerView.setAdapter(cartAdapter);
