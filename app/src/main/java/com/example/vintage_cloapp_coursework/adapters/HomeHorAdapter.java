@@ -1,6 +1,5 @@
 package com.example.vintage_cloapp_coursework.adapters;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -18,7 +17,6 @@ import com.example.vintage_cloapp_coursework.models.HomeHorModel;
 import com.example.vintage_cloapp_coursework.models.HomeVerModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHolder>{
 
@@ -37,15 +35,20 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
         this.activity = activity;
         this.list = list;
     }
+    /*
+    public HomeHorAdapter(UpdateVerticalRec updateVerticalRec, Activity activity, ArrayList<HomeHorModel> list) {
+        this.updateVerticalRec = updateVerticalRec;
+        //this.context = context;
+        this.activity = activity;
+        this.list = list;
+    }
 
-
+*/
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.home_horizontal_item,parent,false));
-
-
 
 
     }

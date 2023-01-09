@@ -1,5 +1,6 @@
 package com.example.vintage_cloapp_coursework.activites.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,12 +19,12 @@ import com.example.vintage_cloapp_coursework.models.HomeHorModel;
 import com.example.vintage_cloapp_coursework.models.HomeVerModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
         RecyclerView homeHorizontalRec,homeVerticalRec;
         ArrayList<HomeHorModel> homeHorModelList;
-
 
         HomeHorAdapter homeHorAdapter;
         ////////////////////////////////VerticalRec
@@ -39,7 +40,7 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
         homeHorizontalRec = root.findViewById(R.id.home_hor_rec);
 
 
-        homeVerticalRec = root.findViewById(R.id.home_ver_rec);
+
 
 
         ////////////////////////////////HorozontalRecylerview
@@ -64,6 +65,9 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
         ////////////////////////////////VerticalRecylerview
 
+        homeVerticalRec = root.findViewById(R.id.home_ver_rec);
+
+
         homeVerModelList = new ArrayList<>();
         homeVerModelList.add(new HomeVerModel(R.drawable.stussy_jacket,"Stussy 8 Ball Jacket ","4.4", "$275"));
         homeVerModelList.add(new HomeVerModel(R.drawable.f1_jacket,"Nascar Formula 1  Jacket ","3.9", "$75"));
@@ -71,14 +75,14 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
 
 
-        homeVerAdapter = new HomeVerAdapter(getActivity(),homeVerModelList);
+        homeVerAdapter = new HomeVerAdapter((Context) getActivity(), (ArrayList<HomeVerModel>) homeVerModelList);
 
 
         homeVerticalRec.setAdapter(homeVerAdapter);
 
         homeVerticalRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
         //homeVerticalRec.setHasFixedSize(true);
-        //homeVerticalRec.setNestedScrollingEnabled(false);
+       //homeVerticalRec.setNestedScrollingEnabled(false);
 
 
         return root;
@@ -88,7 +92,8 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
     @Override
     public void callBack(int position, ArrayList<HomeVerModel> list) {
 
-        homeVerAdapter = new HomeVerAdapter(getActivity(), homeVerModelList);
+        homeVerAdapter = new HomeVerAdapter(getContext(),list);
+        //homeVerAdapter = new HomeVerAdapter((Context) getActivity(), (ArrayList<HomeVerModel>) homeVerModelList);
         homeVerAdapter.notifyDataSetChanged();
         homeVerticalRec.setAdapter(homeVerAdapter);
 
