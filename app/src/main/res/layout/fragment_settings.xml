@@ -1,13 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.fragments.Settings">
+    android:fillViewport="true"
 
-    <TextView
+    >
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Settings" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</FrameLayout>
+
+        <EditText
+            android:id="@+id/edit_text_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="First Name"
+            android:textColor="@color/black"
+
+            />
+
+
+        <EditText
+            android:id="@+id/edit_text_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_re_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Re-enter Password"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Card Details"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            />
+        <EditText
+            android:id="@+id/edit_text_card_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Card Number"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/edit_text_expiry_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Expiry Date (MM/YYYY)"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/edit_text_cvv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CVV"
+            android:inputType="number" />
+
+
+        <Button
+            android:id="@+id/update_button"
+            android:layout_width="375dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg_design"
+            android:fontFamily="sans-serif"
+            android:onClick="mainActivity"
+            android:padding="14dp"
+            android:paddingBottom="10dp"
+            android:text="Update Info"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -64,15 +64,21 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
         ////////////////////////////////VerticalRecylerview
 
-
-
+        homeVerModelList = new ArrayList<>();
+        homeVerModelList.add(new HomeVerModel(R.drawable.stussy_jacket,"Stussy 8 Ball Jacket ","4.4", "$275"));
+        homeVerModelList.add(new HomeVerModel(R.drawable.f1_jacket,"Nascar Formula 1  Jacket ","3.9", "$75"));
+        homeVerModelList.add(new HomeVerModel(R.drawable.palm_angel_monclizzy,"Palm Angel Monclizzy","4.8", "$5000"));
 
 
 
         homeVerAdapter = new HomeVerAdapter(getActivity(),homeVerModelList);
-        homeVerticalRec.setAdapter(homeVerAdapter);
-        homeVerticalRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
 
+
+        homeVerticalRec.setAdapter(homeVerAdapter);
+
+        homeVerticalRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
+        //homeVerticalRec.setHasFixedSize(true);
+        //homeVerticalRec.setNestedScrollingEnabled(false);
 
 
         return root;
@@ -82,7 +88,7 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
     @Override
     public void callBack(int position, ArrayList<HomeVerModel> list) {
 
-        homeVerAdapter = new HomeVerAdapter(getContext(),list);
+        homeVerAdapter = new HomeVerAdapter(getActivity(), homeVerModelList);
         homeVerAdapter.notifyDataSetChanged();
         homeVerticalRec.setAdapter(homeVerAdapter);
 

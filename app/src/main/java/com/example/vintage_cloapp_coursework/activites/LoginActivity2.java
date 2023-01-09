@@ -32,10 +32,15 @@ public class LoginActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
+        button = (Button) findViewById(R.id.button);
+        emailinput = (EditText) findViewById(R.id.email_address_input_loginpage);
+        passwordinput = (EditText) findViewById(R.id.password_input_loginpage);
+
 
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(LoginActivity2.this, MainActivity.class));
                 final String email = emailinput.getText().toString();
                 String password  = passwordinput.getText().toString();
                 try {

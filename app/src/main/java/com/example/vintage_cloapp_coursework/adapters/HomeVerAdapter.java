@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vintage_cloapp_coursework.R;
 import com.example.vintage_cloapp_coursework.models.CartModel;
+import com.example.vintage_cloapp_coursework.models.HomeVerModel;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
@@ -23,12 +24,20 @@ public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHold
 
     private BottomSheetDialog bottomSheetDialog;
     Context context;
-    ArrayList<CartModel> list;
+    ArrayList<HomeVerModel> list;
+    ArrayList<HomeVerModel> homeVerModelList;
 
-    public HomeVerAdapter(Context context, ArrayList<CartModel> list) {
+
+
+
+
+    public HomeVerAdapter(Context context, ArrayList<HomeVerModel> list) {
         this.context = context;
         this.list = list;
+
     }
+
+
 
     @NonNull
     @Override
@@ -51,14 +60,27 @@ public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bottomSheetDialog = new BottomSheetDialog(context,R.style.BottomSheetTheme);
+                bottomSheetDialog  = new BottomSheetDialog(context,R.style.BottomSheetTheme);
                 View sheetView = LayoutInflater.from(context).inflate(R.layout.bottom_sheet_layout,null);
-                sheetView.findViewById(R.id.add_to_cart).setOnClickListener(new View.OnClickListener() {
+                sheetView.findViewById(R.id.add_to_cart).setOnClickListener(new View.OnClickListener()  {
                     @Override
                     public void onClick(View v) {
 
+                        ArrayList<CartModel> cartList = new ArrayList<>();
+                        cartList.add(new CartModel(mImage, mName, mPrice, mRating));
+
+                        //Bundle bundle = new Bundle();
+                        //bundle.putParcelableArrayList("cart_list", (ArrayList<? extends Parcelable>) cartList);
+
+
+                        HomeVerAdapter fragment = new HomeVerAdapter(context, homeVerModelList);
+                        //fragment.setArguments(bundle);
+
                         Toast.makeText(context,"Added To Cart",Toast.LENGTH_SHORT).show();
-                        list.add(new CartModel(mImage,mName,mPrice, mRating));
+                        //list.add(new CartModel(mImage,mName,mPrice, mRating));
+
+
+                        Toast.makeText(context,"Added To Cart",Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
 
                     }
@@ -82,7 +104,12 @@ public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHold
         });
 
     }
-
+/*
+    private void setArguments(Bundle bundle) {
+        ArrayList<CartModel> cartList = bundle.<CartModel>getParcelableArrayList("cart_list");
+        // Use the values from the cartList array to update the UI or perform some other action
+    }
+*/
     @Override
     public int getItemCount() {
           return list.size();
